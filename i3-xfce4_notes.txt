@@ -1,0 +1,39 @@
+follow the usual arch installation video whihc you see all the time,
+
+
+then install xfce4 xfce4-goodies
+
+config the panel to your liking.
+
+
+
+
+2. install i3-gaps i3-status
+
+
+After this go to "Session and Startup" >> "Current Session" and then change xfdesktop and xfwm to "Never" in Restart Style.
+
+Then go to "application autostart" tab, add a new application:
+
+Name: i3
+Description: Tiling Window Manager
+Command: i3
+
+
+
+3. install rofi, feh, picom
+
+
+4. make the keysyms for 
+mod+q to kill,
+mod+d to run rofi, 
+feh bg on startups
+mod+shift+x for shutdown
+
+add "--no-startup-id" flag to pretty much every exec commands, to prevent the loading cursor bug (my hunch is on the exec feh command, as the loading cursor shows up only when im pointing the mouse to the wallpaper).
+
+remove the bar{}  in config file, add the "gap" stuff in your config file.
+
+
+
+5. Also set the PS1 value, check the centos config for that.
