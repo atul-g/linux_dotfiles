@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/atulu/Documents/imp_college_notes/sem_5/computer_networks'
+let g:netrw_dirhist_3='/home/atulu/Documents/dummy'
+let g:netrw_dirhist_2='/home/atulu/Documents/my-portfolio-site-backup'
+let g:netrw_dirhist_1='/home/atulu/Documents/portfolio_site/css'
