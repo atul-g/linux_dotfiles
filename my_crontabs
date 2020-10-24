@@ -1,0 +1,8 @@
+# crontab -e >
+
+@reboot /home/atulu/batCheck.sh
+
+
+# sudo crontab -e
+
+@reboot sleep 60 && /usr/local/bin/undervolt --core -150 --cache -150
