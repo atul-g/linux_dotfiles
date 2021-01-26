@@ -1,0 +1,9 @@
+
+
+[sendemail]
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpencryption = tls
+    smtpuser = leoatul12@gmail.com
+#Note, we arent writing "smptpass" here. There is no problem, git will  just ask for your
+    password every time you `git send-email....`
