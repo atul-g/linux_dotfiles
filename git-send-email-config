@@ -1,4 +1,9 @@
 
+[format]
+    signoff = true
+
+[core]
+    editor = vim
 
 [sendemail]
     smtpserver = smtp.gmail.com
