@@ -23,3 +23,6 @@ unset use_domain        # because joe@localhost is just embarrassing
 set realname = "Atul Gopinathan"
 set from = "<your-email-username>@gmail.com"
 set use_from = yes
+
+# Using "G" to fetch new e-mails (only for imap)
+bind index G imap-fetch-mail
