@@ -1,3 +1,4 @@
+# GMAIL SETUP REF: https://support.google.com/mail/answer/7126229?authuser=1&visit_id=637484845183489232-733952667&hl=en&rd=1
 # ================  IMAP ====================
 set imap_user = <your-email-username>@gmail.com
 #set imap_pass = You can leave this blank, mutt will ask you to enter password everytime
