@@ -5,12 +5,14 @@ author:
     - abs@org.org # this isn't the rigt way to show up e-mail btw
 geometry: margin=2cm
 documentclass: extarticle # this property is needed for several styles used below
-fontsize: 14pt
+fontsize: 14pt # possible sizes: 8, 9, 10, 11, 12, 14, 17, 20
 mainfont: Calibri 
 linestretch: 1.25 ## this sets line-spacing
 ---
 
 # MARKDOWN CONTENT STARTS HERE
+
+# run: pandoc this-file.md -o trial.pdf - to get pdf from this file
 
 # Hello
 ## okay

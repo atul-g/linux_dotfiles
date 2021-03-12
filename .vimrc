@@ -1,19 +1,18 @@
 set number
-set expandtab
-set tabstop=4
-set shiftwidth=4
 set autoindent
 set smartindent
 set cursorline
 filetype plugin indent on
 runtime macros/matchit.vim
 
+" For python and js alone 4 tabs
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
 " This is for auto-closing parenthesis
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
+" inoremap ( ()<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
