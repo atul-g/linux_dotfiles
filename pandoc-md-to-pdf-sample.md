@@ -7,6 +7,7 @@ geometry: margin=2cm
 documentclass: extarticle # this property is needed for several styles used below
 fontsize: 14pt # possible sizes: 8, 9, 10, 11, 12, 14, 17, 20
 mainfont: Calibri 
+urlcolor: blue
 linestretch: 1.25 ## this sets line-spacing
 ---
 
