@@ -143,3 +143,7 @@ export PATH=~/go/src/github.com/google/syzkaller/bin:~/go/src/github.com/google/
 
 # To make tmux to render proper grey color for auto-suggestions
 export TERM=xterm-256color
+
+# to make sure certain lines in htop tree, zsh prompt etc showed
+# properly in tmux
+alias tmux='tmux -u'
