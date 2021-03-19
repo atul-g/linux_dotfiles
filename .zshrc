@@ -98,9 +98,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/atulu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/atulu/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/atulu/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/atulu/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# snap not showing up error:
+# emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
+
 
 # PURE PROMPT INSTALLATION:
-fpath+=/home/atulu/.oh-my-zsh/custom/themes/pure
+fpath+=$HOME/.zsh/pure
 
 autoload -U promptinit; promptinit
 
@@ -115,3 +134,12 @@ export PATH="$HOME/.radicle/bin:$PATH"
 cheat() {
     curl cheat.sh/$1
 }
+
+
+# For go and syzkaller
+export PATH=~/go/bin:$PATH
+export PATH=~/go/src/github.com/google/syzkaller/bin:~/go/src/github.com/google/syzkaller/bin/linux_amd64/:$PATH
+
+
+# To make tmux to render proper grey color for auto-suggestions
+export TERM=xterm-256color
