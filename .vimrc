@@ -2,12 +2,14 @@ set number
 set autoindent
 set smartindent
 set cursorline
+set hlsearch
 filetype plugin indent on
 runtime macros/matchit.vim
 
 " For python and js alone 4 tabs
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
