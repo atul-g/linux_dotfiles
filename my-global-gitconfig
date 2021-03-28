@@ -1,0 +1,18 @@
+[user]
+	name = Atul Gopinathan
+	email = atulgopinathan@gmail.com
+
+[format]
+	signoff = yes
+[core]
+	editor = vim
+
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = atulgopinathan@gmail.com
+[diff]
+	tool = vimdiff
+[credential]
+	helper = cache
