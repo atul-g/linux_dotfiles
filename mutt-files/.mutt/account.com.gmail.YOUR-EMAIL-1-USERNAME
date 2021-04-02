@@ -1,18 +1,15 @@
-# GMAIL SETUP REF: https://support.google.com/mail/answer/7126229?authuser=1&visit_id=637484845183489232-733952667&hl=en&rd=1
 # ================  IMAP ====================
-set imap_user = <your-email-username>@gmail.com
-#set imap_pass = You can leave this blank, mutt will ask you to enter password everytime
+set imap_user = <your-email>@gmail.com
+#set imap_pass = ""
 set spoolfile = imaps://imap.gmail.com/INBOX
 set folder = imaps://imap.gmail.com/
 set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
 set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
-set header_cache = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
 # ================  SMTP  ====================
-set smtp_url = "smtp://<your-email-username>@smtp.gmail.com:587/"
-#set smtp_pass = You can leave this blank as mutt will ask you for password, if its not written here
+set smtp_url = "smtp://<your-email>@smtp.gmail.com:587/"
+#set smtp_pass = ""
 set ssl_force_tls = yes # Require encrypted connection
 # ================  Composition  ====================
 set editor = "vim"      # Set your favourite editor.
@@ -22,8 +19,5 @@ set charset = UTF-8     # value of $LANG; also fallback for send_charset
 # Sender, email address, and sign-off line must match
 unset use_domain        # because joe@localhost is just embarrassing
 set realname = "Atul Gopinathan"
-set from = "<your-email-username>@gmail.com"
+set from = "<your-email>@gmail.com"
 set use_from = yes
-
-# Using "G" to fetch new e-mails (only for imap)
-bind index G imap-fetch-mail
