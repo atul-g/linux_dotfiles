@@ -147,3 +147,59 @@ export TERM=xterm-256color
 # to make sure certain lines in htop tree, zsh prompt etc showed
 # properly in tmux
 alias tmux='tmux -u'
+
+
+# setting virtme stuff into the PATH
+export PATH=~/Documents/virtme-linux/virtme/:~/Documents/virtme-linux/virtme/bin/:$PATH
+
+
+
+# Function to use 0x0.st pastebin service in easy way
+0x0() {
+	which xclip > /dev/null
+	if [ $? -ne 0 ]
+	then
+		echo "This function needs xclip. Install it please."
+		return 1
+	fi
+
+	if [ "$1" = "c" ]
+	then
+		xclip -o > /tmp/0x0-pastebin.temp
+		echo "making paste from clipboard...\n"
+		if [ "$2" = "s" ]
+		then
+			echo "######## Contents of paste #########"
+			cat /tmp/0x0-pastebin.temp
+			echo "\n########### End of paste ###########\n"
+		fi
+		curl -F 'file=@/tmp/0x0-pastebin.temp' https://0x0.st
+
+	elif [ "$1" = "f" ]
+	then
+		echo "making paste from file...\n"
+		# if show argument was also passed
+		if [ "$2" = "s" ]
+		then
+			echo "######## Contents of paste #########"
+			cat "$3"
+			echo "\n########### End of paste ###########\n"
+			curl -F "file=@"${3}"" https://0x0.st
+
+		elif [ "$2" != "" ]
+		then
+			curl -F "file=@"${2}"" https://0x0.st
+		else
+			echo "No file passed...Aborting."
+			return 2 # not really necessay, but it helps
+				 # for setting $? as non zero
+		fi
+	else
+		echo "No arguments passed..."
+		echo "Usage: 0x0 {c|f} [s] [/path/to/file]"
+		echo "c - make paste from system clipboard"
+		echo "f - make paste from specified file"
+		echo "s - show the contents of paste created"
+		return 2
+	fi
+}
