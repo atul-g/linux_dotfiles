@@ -1,0 +1,43 @@
+1. Dont install orca. It is for visually impaired.
+2. Install xorg-xbacklight to make brightness buttons work.
+3. Try installing optimus-manager-qt
+4. Install kdeconnect.
+5. Disable element notifications for endeavour os in kdeconnect android app.
+
+6. For batCheck.sh, there is no crond in arch linux, so you may have to create a systemd
+timer.
+
+make a file in:
+~/.config/systemd/user/batCheck.service
+contents of the file:
+```
+[Unit]V
+
+Description=Battery Monitor Service
+
+[Service]
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/atulu/.Xauthority
+ExecStart=/home/atulu/batCheck.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+make sure chmod + batCheck.sh
+
+and then execute: systemctl --user enable batCheck.service; systemctl --user start batCheck;
+
+
+7. Blacklist alx module: in /etc/modeprobe.d/blacklist file:
+```
+blacklist alx 
+```
+
+8. For fonts, put the list of .ttf files in ~/.fonts and execute:
+$ fc-cache -fv
+$ fc-list | grep part-of-font-name
+
+Use this font name in i3's config file. For some reason, in bar {} in config file, 
+changing font means, you have to delete the currently given fonts names and put your
+font name alone for it to work.
