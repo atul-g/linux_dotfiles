@@ -33,6 +33,11 @@ inoremap jj <ESC>
 "set undolevels=1000
 
 
+" My custom bindings for navigating across tabs:
+map <C-j> gt
+map <C-k> gT
+
+
 " VIM-PLUG - plugin manager
 " VIM-PLUG depends on git, make sure you have git installed
 if empty(glob('~/.vim/autoload/plug.vim'))
