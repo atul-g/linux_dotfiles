@@ -11,13 +11,16 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+" 2 tabs for yaml, also takes care of "-" indentations
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
 " This is for auto-closing parenthesis
 " inoremap ( ()<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 " This is a binding to enable Escaping insert mode via pressing "jj"
 " To type literall "jj" one needs to press j for a second and then
@@ -37,6 +40,8 @@ inoremap jj <ESC>
 map <C-j> gt
 map <C-k> gT
 
+let g:NERDTreeWinSize=30
+
 
 " VIM-PLUG - plugin manager
 " VIM-PLUG depends on git, make sure you have git installed
@@ -51,5 +56,11 @@ call plug#begin('~/.vim/plugged')
 
 " jsx/react plugin
 Plug 'maxmellon/vim-jsx-pretty'
+
+" nerdtree plugin
+Plug 'preservim/nerdtree'
+
+" automatic brace create/delete
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
