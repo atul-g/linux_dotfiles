@@ -1,0 +1,10 @@
+# ignore the undo folder in .vim
+.vim/undo
+
+.vim/.netrwhist
+
+# exclude all plugin folders here as they are all git repositories
+.vim/plugged/*
+
+# do not exclude this note to self file
+!.vim/plugged/README.md

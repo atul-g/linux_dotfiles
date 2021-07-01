@@ -15,33 +15,19 @@ autocmd Filetype markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-
-" This is for auto-closing parenthesis
-" inoremap ( ()<left>
-" inoremap { {}<left>
-" inoremap {<CR> {<CR>}<ESC>O
-" inoremap {;<CR> {<CR>};<ESC>O
+:autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
 
 " This is a binding to enable Escaping insert mode via pressing "jj"
 " To type literall "jj" one needs to press j for a second and then
 " enter the second j.
 inoremap jj <ESC>
 
-" This saves undo trees of a file, so you can access them even after
-" closing those files:
-"set undofile
-"set undodir=~/.vim/undo
-
-" number of undo saved
-"set undolevels=1000
-
-
 " My custom bindings for navigating across tabs:
 map <C-j> gt
 map <C-k> gT
 
 let g:NERDTreeWinSize=30
-
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
 
 " VIM-PLUG - plugin manager
 " VIM-PLUG depends on git, make sure you have git installed
@@ -62,5 +48,8 @@ Plug 'preservim/nerdtree'
 
 " automatic brace create/delete
 Plug 'jiangmiao/auto-pairs'
+
+" autoclose html/xml tags
+Plug 'alvan/vim-closetag'
 
 call plug#end()
