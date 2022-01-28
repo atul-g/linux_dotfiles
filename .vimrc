@@ -3,6 +3,7 @@ set autoindent
 set smartindent
 set cursorline
 set hlsearch
+set mouse=a
 filetype plugin indent on
 runtime macros/matchit.vim
 
